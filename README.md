@@ -2,11 +2,11 @@
 
 ## Jam
 
-- _Name_: Godot Wild Jam 41
-- _Duration_: Jan 14-23, 2022
-- _Theme_: Ocean
+- **Name**: [Godot Wild Jam 41](https://itch.io/jam/godot-wild-jam-41)
+- **Duration**: Jan 14-23, 2022
+- **Theme**: Ocean
 
 ## Game Specs
 
-- _Graphics_: 2D
-- _Engine_: Godot 3.4.2
+- **Graphics**: 2D
+- **Engine**: Godot 3.4.2
