@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://textures/background.png" type="Texture" id=1]
+[ext_resource path="res://textures/layer1.png" type="Texture" id=1]
 [ext_resource path="res://map/map.gd" type="Script" id=2]
 [ext_resource path="res://map/tile.png" type="Texture" id=3]
+[ext_resource path="res://textures/layer3.png" type="Texture" id=4]
+[ext_resource path="res://textures/layer2.png" type="Texture" id=5]
 
 [sub_resource type="TileSet" id=1]
 0/name = "tile.png 0"
@@ -25,9 +27,23 @@ script = ExtResource( 2 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Background"]
+position = Vector2( 501, 323 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 4 )
+
+[node name="Reef" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Reef"]
+position = Vector2( 501, 323 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 5 )
+
+[node name="Light" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Light"]
 position = Vector2( 501, 323 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 1 )
