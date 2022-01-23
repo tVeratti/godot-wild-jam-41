@@ -8,11 +8,36 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Actor",
+"language": "GDScript",
+"path": "res://actor.gd"
+}, {
+"base": "Node",
+"class": "CoinService",
+"language": "GDScript",
+"path": "res://coin/CoinService.gd"
+} ]
+_global_script_class_icons={
+"Actor": "",
+"CoinService": ""
+}
+
 [application]
 
 config/name="godot-wild-jam-41"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=960
+window/size/height=640
+
+[global]
+
+size=false
 
 [physics]
 
