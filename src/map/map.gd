@@ -1,7 +1,5 @@
 extends Node
 
-var path:PoolVector2Array = []
-
 onready var _map:TileMap = $TileMap
 onready var _a_star:AStar2D = AStar2D.new()
 onready var _tiles:Array = _map.get_used_cells()
@@ -42,14 +40,16 @@ func get_astar_path(world_start:Vector2, world_end:Vector2):
 	var start_id = get_tile_id(start)
 	var end_id = get_tile_id(end)
 	
-	path = _a_star.get_point_path(start_id, end_id)
+	var path = []
+	var coord_path = _a_star.get_point_path(start_id, end_id)
+	coord_path.remove(0)
+	for coord in coord_path:
+		path.append(_map.map_to_world(coord))
+	
 	return path
 
 
 func get_tile_id(tile:Vector2):
 	return (tile.x + tile.y) * (tile.x + tile.y + 1) / 2 + tile.y
 
-
-func _on_navigate(origin, destination):
-	print(get_astar_path(origin, destination).size())
 
